@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,32 +9,39 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f0f0f0;
-            padding: 50px;
+            padding: 20px; /* Reducido para móviles */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total del contenedor */
         }
 
         .container {
             text-align: center;
+            width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+            max-width: 600px; /* Máximo ancho para evitar que se estire demasiado */
+            box-sizing: border-box;
         }
 
         h1 {
             margin-top: -20px;
+            font-size: 1.5em; /* Tamaño de fuente ajustado para mejor visibilidad en móviles */
+            word-wrap: break-word; /* Asegura que el texto largo se ajuste */
         }
 
         button {
             display: block;
             margin: 10px auto;
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 16px; /* Ajustado para móviles */
             cursor: pointer;
             background-color: #81D8D0;
             color: white;
             border: none;
             border-radius: 5px;
+            box-sizing: border-box; /* Incluye padding en el tamaño del botón */
         }
 
         button:hover {
@@ -48,12 +55,13 @@
 
         #mensaje {
             margin-top: 30px;
-            font-size: 28px;
+            font-size: 1.2em; /* Ajustado para mejor visibilidad en móviles */
             color: #333;
             font-weight: bold;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            word-wrap: break-word; /* Ajusta el texto largo */
         }
 
         #mensaje.fade-in {
@@ -62,9 +70,28 @@
 
         #error {
             color: #ff0000;
-            font-size: 20px;
+            font-size: 1em; /* Ajustado para mejor visibilidad en móviles */
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Reduce el padding para pantallas más pequeñas */
+            }
+
+            button {
+                padding: 10px 20px; /* Ajuste del padding para botones en móviles */
+                font-size: 14px; /* Tamaño de fuente reducido para móviles */
+            }
+
+            #mensaje {
+                font-size: 1em; /* Tamaño de fuente ajustado */
+            }
+
+            h1 {
+                font-size: 1.2em; /* Tamaño de fuente ajustado */
+            }
         }
     </style>
 </head>
